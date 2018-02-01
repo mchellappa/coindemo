@@ -48,15 +48,15 @@
 
 
 	<a-plane color="#FFFFFF" width=2 height=2 position="-5 5 -2">
-		<a-image show-graph src="#magnifying-icon" position="0 0 0"></a-image>
+		<a-image get-esg-score90 src="#magnifying-icon" position="0 0 0"></a-image>
 	</a-plane>
 
 	<a-plane color="#FFFFFF" width=2 height=2 position="-2 5 -2">
-		<a-image show-graph src="#RenewableEnergy" position="0 0 0"></a-image>
+		<a-image get-esg-score70 src="#RenewableEnergy" position="0 0 0"></a-image>
 	</a-plane>
 
 	<a-plane color="#FFFFFF" width=2 height=2 position="1 5 -2">
-		<a-image show-graph src="#FairLabor" position="0 0 0"></a-image>
+		<a-image get-esg-score60 src="#FairLabor" position="0 0 0"></a-image>
 	</a-plane>
 
 	<a-plane color="#FFFFFF" width=2 height=2 position="4 5 -2">
@@ -71,9 +71,18 @@
 		<a-plane id="esgtext" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
 		<a-plane id="closeesgplane" hide-esg width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
 	</a-entity>
-
-
-
+	<a-entity id="esgscore60" visible="false" position="-150 0 0">
+		<a-plane id="esgtext60" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
+		<a-plane id="closeesgplane60" hide-esg60 width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
+	</a-entity>
+	<a-entity id="esgscore70" visible="false" position="-150 0 0">
+		<a-plane id="esgtext70" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
+		<a-plane id="closeesgplane60" hide-esg70 width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
+	</a-entity>
+	<a-entity id="esgscore90" visible="false" position="-150 0 0">
+		<a-plane id="esgtext90" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
+		<a-plane id="closeesgplane60" hide-esg90 width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
+	</a-entity>
 	<a-entity id="chartPlaneWrapper" visible="false" position="-150 0 0">
 		<a-plane id="chartPlane" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
 		<a-plane id="closeChartPlane" hide-graph width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
