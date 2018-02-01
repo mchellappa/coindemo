@@ -1,0 +1,91 @@
+<!doctype html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="content/graph.css">
+
+	<script src="js/aframe.js"></script>
+
+	<!-- https://github.com/donmccurdy/aframe-extras -->
+	<script src="js/aframe-extras.min.js"></script>
+
+	<!-- https://github.com/ngokevin/aframe-animation-component -->
+	<script src="js/aframe-animation-component.min.js"></script>
+
+	<!-- https://github.com/scenevr/htmltexture-component/tree/master/dist -->
+	<script src="js/aframe-htmltexture-component.min.js"></script>
+
+	<!-- https://github.com/maxkrieger/aframe-draw-component -->
+	<script src="js/aframe-draw-component.js"></script>
+
+	<!-- https://d3js.org/ -->
+	<script src="js/d3.v4.min.js"></script>
+
+	<script src="js/components.js"></script>
+
+	<script src="js/rawData.js"></script>
+
+</head>
+
+<body>
+
+<a-scene>
+	<a-assets>
+		<img id="magnifying-icon" src="content/LandAndRivers.png">
+		<img id="RenewableEnergy" src="content/RenewableEnergy.png">
+		<img id="FairLabor" src="content/FairLabor.png">
+		<img id="TrainWorkers" src="content/TrainWorkers.png">
+		<img id="map-texture" src="content/ausMap.png">
+		<img id="sky" src="content/city.jpg" />
+		<img id="perth" src="content/perth.png">
+		<img id="melbourne" src="content/melbourne.png">
+		<img id="sydney" src="content/sydney.png">
+	</a-assets>
+
+	<a-camera id="camera" position="0.6 1 10">
+		<a-cursor color="#4CC3D9" fuse="true" timeout="2"></a-cursor>
+    </a-camera>
+
+
+
+	<a-plane color="#FFFFFF" width=2 height=2 position="-5 5 -2">
+		<a-image show-graph src="#magnifying-icon" position="0 0 0"></a-image>
+	</a-plane>
+
+	<a-plane color="#FFFFFF" width=2 height=2 position="-2 5 -2">
+		<a-image show-graph src="#RenewableEnergy" position="0 0 0"></a-image>
+	</a-plane>
+
+	<a-plane color="#FFFFFF" width=2 height=2 position="1 5 -2">
+		<a-image show-graph src="#FairLabor" position="0 0 0"></a-image>
+	</a-plane>
+
+	<a-plane color="#FFFFFF" width=2 height=2 position="4 5 -2">
+		<a-image get-esg-score src="#TrainWorkers" position="0 0 0"></a-image>
+	</a-plane>
+
+
+
+	<a-sky src="#sky"></a-sky>
+
+	<a-entity id="esgscore" visible="false" position="-150 0 0">
+		<a-plane id="esgtext" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
+		<a-plane id="closeesgplane" hide-esg width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
+	</a-entity>
+
+
+
+	<a-entity id="chartPlaneWrapper" visible="false" position="-150 0 0">
+		<a-plane id="chartPlane" rotation="0 0 0" width="8" height="4" htmltexture="asset: #chart"></a-plane>
+		<a-plane id="closeChartPlane" hide-graph width=0.3 height="0.3" position="0 -1.7 0.1" material="color:#7E9518"></a-plane>
+	</a-entity>
+
+	<div id="chart">
+		<span>ESG Score</span>
+		<div id="chartBars">
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</a-scene>
+
+</body>
