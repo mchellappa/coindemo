@@ -75,14 +75,20 @@ AFRAME.registerComponent('get-esg-score', {
 						}
 						var decodedData = JSON.parse(window.atob(data.content));
 						console.log(decodedData.esgscore);
+            d3.select("#chartBars").select("svg").remove();
 						var svg = d3.select("#chartBars").append("svg:svg");
 						var viz1 = svg.append("rect")
 													.attr("width", decodedData.esgscore)
 														.attr("height",5)
-														.attr("fill","blue");
+														.attr("fill","blue")
+														.attr("text",decodedData.esgscore);
+						var viz2 = svg.append("text")
+													.text( decodedData.esgscore)
+														.attr("x",decodedData.esgscore)
+														.attr("y",11)
+														.attr("fill","black");
 
 
-						
 
 			});
 
@@ -158,12 +164,17 @@ AFRAME.registerComponent('get-esg-score60', {
 						}
 						var decodedData = JSON.parse(window.atob(data.content));
 						console.log(decodedData.esgscore);
+           d3.select("#chartBars").select("svg").remove();
 						var svg = d3.select("#chartBars").append("svg:svg");
 						var viz1 = svg.append("rect")
 													.attr("width", decodedData.esgscore)
 														.attr("height",5)
-														.attr("fill","blue");
-
+														.attr("fill","blue").attr("text",decodedData.esgscore);
+						var viz2 = svg.append("text")
+ 												 .text( decodedData.esgscore)
+ 													 .attr("x",decodedData.esgscore)
+ 													 .attr("y",11)
+ 													 .attr("fill","black");
 
 
 
@@ -226,12 +237,17 @@ AFRAME.registerComponent('get-esg-score70', {
 						}
 						var decodedData = JSON.parse(window.atob(data.content));
 						console.log(decodedData.esgscore);
+						d3.select("#chartBars").select("svg").remove();
 						var svg = d3.select("#chartBars").append("svg:svg");
 						var viz1 = svg.append("rect")
 													.attr("width", decodedData.esgscore)
 														.attr("height",5)
-														.attr("fill","blue");
-
+														.attr("fill","blue").attr("text",decodedData.esgscore);
+						var viz2 = svg.append("text")
+ 												 .text( decodedData.esgscore)
+ 													 .attr("x",decodedData.esgscore)
+ 													 .attr("y",11)
+ 													 .attr("fill","black");
 
 
 
@@ -294,11 +310,17 @@ AFRAME.registerComponent('get-esg-score90', {
 						}
 						var decodedData = JSON.parse(window.atob(data.content));
 						console.log(decodedData.esgscore);
+						d3.select("#chartBars").select("svg").remove();
 						var svg = d3.select("#chartBars").append("svg:svg");
 						var viz1 = svg.append("rect")
 													.attr("width", decodedData.esgscore)
 														.attr("height",5)
 														.attr("fill","blue");
+						var viz2 = svg.append("text")
+													.text( decodedData.esgscore)
+														.attr("x",decodedData.esgscore)
+														.attr("y",11)
+														.attr("fill","black");
 
 
 
